@@ -36,13 +36,13 @@ class DebugTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SetSGIdentifier", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LiveLogsIdentifier", for: indexPath)
             return cell
         } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SendHypoIdentifier", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CoreDataIdentifier", for: indexPath)
             return cell
         } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SendFeedbackIdentifier", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LocalizationIdentifier", for: indexPath)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyIdentifier", for: indexPath)

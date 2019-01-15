@@ -10,11 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var revealMenuButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func revealAction(_ sender: Any) {
+        DebugWindow.sharedInstance.showDebugView()
+    }
+    
 }
 

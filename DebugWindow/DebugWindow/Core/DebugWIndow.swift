@@ -30,9 +30,7 @@ public class DebugWindow {
         }
     }
     
-    @objc private func swipedScreen(swipeGesture:UISwipeGestureRecognizer) {
-        NSLog("swipedScreen called")
-        
+    public func showDebugView() {
         let sb = UIStoryboard(name: "DebugTableViewController", bundle: nil)
         
         guard let debugNavVC = sb.instantiateInitialViewController() as? UINavigationController else {
@@ -52,5 +50,11 @@ public class DebugWindow {
         } else {
             NSLog("ERROR: app has no window defined in AppDelegate????")
         }
+    }
+    
+    @objc private func swipedScreen(swipeGesture:UISwipeGestureRecognizer) {
+        NSLog("swipedScreen called")
+        
+        showDebugView()
     }
 }

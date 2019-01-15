@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		326625F721EE67A2004E49B0 /* DWLocalizationDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625F621EE67A2004E49B0 /* DWLocalizationDebug.storyboard */; };
+		326625F921EE6840004E49B0 /* DWCoreDataSpy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625F821EE6840004E49B0 /* DWCoreDataSpy.storyboard */; };
+		326625FB21EE68A2004E49B0 /* DWLiveLogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625FA21EE68A2004E49B0 /* DWLiveLogs.storyboard */; };
 		526B9A0921DD7B7900A8E11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A0821DD7B7900A8E11E /* AppDelegate.swift */; };
 		526B9A0B21DD7B7900A8E11E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A0A21DD7B7900A8E11E /* ViewController.swift */; };
 		526B9A0E21DD7B7900A8E11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526B9A0C21DD7B7900A8E11E /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		326625F621EE67A2004E49B0 /* DWLocalizationDebug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DWLocalizationDebug.storyboard; sourceTree = "<group>"; };
+		326625F821EE6840004E49B0 /* DWCoreDataSpy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DWCoreDataSpy.storyboard; sourceTree = "<group>"; };
+		326625FA21EE68A2004E49B0 /* DWLiveLogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DWLiveLogs.storyboard; sourceTree = "<group>"; };
 		526B9A0521DD7B7900A8E11E /* DebugWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526B9A0821DD7B7900A8E11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526B9A0A21DD7B7900A8E11E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,9 @@
 				526B9A3621DD7EBC00A8E11E /* DebugWIndow.swift */,
 				526B9A3F21DD827E00A8E11E /* DebugTableViewController.swift */,
 				526B9A4121DD828C00A8E11E /* DebugTableViewController.storyboard */,
+				326625FA21EE68A2004E49B0 /* DWLiveLogs.storyboard */,
+				326625F821EE6840004E49B0 /* DWCoreDataSpy.storyboard */,
+				326625F621EE67A2004E49B0 /* DWLocalizationDebug.storyboard */,
 				526B9A3921DD81C500A8E11E /* SlideInPresentationManager.swift */,
 				526B9A3C21DD81D800A8E11E /* SlideInPresentationAnimator.swift */,
 				526B9A3B21DD81D800A8E11E /* SlideInPresentationController.swift */,
@@ -255,9 +264,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326625F721EE67A2004E49B0 /* DWLocalizationDebug.storyboard in Resources */,
 				526B9A4221DD828C00A8E11E /* DebugTableViewController.storyboard in Resources */,
 				526B9A1321DD7B7B00A8E11E /* LaunchScreen.storyboard in Resources */,
+				326625F921EE6840004E49B0 /* DWCoreDataSpy.storyboard in Resources */,
 				526B9A1021DD7B7B00A8E11E /* Assets.xcassets in Resources */,
+				326625FB21EE68A2004E49B0 /* DWLiveLogs.storyboard in Resources */,
 				526B9A0E21DD7B7900A8E11E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

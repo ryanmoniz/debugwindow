@@ -11,13 +11,17 @@ import UIKit
 public class DebugWindow {
     public static let sharedInstance = DebugWindow()
     
-    private var menuItems = [DWGenericMenu]()
+    private var _menuItems = [DWGenericMenu]()
     private lazy var slideInTransitioningDelegate = SlideInPresentationManager()
     private var debugVC: DebugTableViewController!
     
     //MARK: - Methods
     public func setup(menuItems:[DWGenericMenu]?) {
         NSLog("DebugWindow init")
+        
+        if let newMenuItems = menuItems {
+            self._menuItems = newMenuItems
+        }
         
         //configure swipe action
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipedScreen))
@@ -37,6 +41,11 @@ public class DebugWindow {
         guard let debugNavVC = sb.instantiateInitialViewController() as? UINavigationController else {
             NSLog("ERROR: missing DebugTableViewController storyboard/initalizer")
             return
+        }
+        
+        if let debugVC = debugNavVC.viewControllers.first as? DebugTableViewController {
+            debugVC._menuItems = self._menuItems
+            debugNavVC.viewControllers = [debugVC]
         }
         
         //configure uipresentationcontroller

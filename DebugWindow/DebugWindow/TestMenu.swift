@@ -11,12 +11,19 @@ import UIKit
 /// A menu with custom UI.
 internal struct TestMenu: DWGenericMenu {
     
-    func didSelectRowAt() {
-        
+    var reuseIdentifier: String {
+        return "TestCellIdentifier"
+    }
+    
+    func didSelectRowAt(navigationController:UINavigationController) {
+        let testVC = TestViewController(nibName: "TestViewController", bundle: nil)
+        //let testVC = Bundle.main.loadNibNamed("TestViewController", owner: self, options: nil)[0] as? TestViewController
+
+        navigationController.pushViewController(testVC, animated: true)
     }
     
     
-    static var nib: UINib? {
+    var nib: UINib? {
         return UINib(nibName: "TestCell", bundle: nil)
     }
     

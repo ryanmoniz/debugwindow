@@ -9,7 +9,8 @@
 import UIKit
 
 class DebugTableViewController: UITableViewController {
-
+    var _menuItems = [DWGenericMenu]()
+    
     @IBAction func doneAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -22,6 +23,9 @@ class DebugTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //register cells first
+        registerCellClasses(options: _menuItems)
     }
 
     // MARK: - Table view data source
@@ -31,7 +35,7 @@ class DebugTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 3 + _menuItems.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,9 +48,48 @@ class DebugTableViewController: UITableViewController {
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LocalizationIdentifier", for: indexPath)
             return cell
+        } else {
+            //handle custom menus
+            if (indexPath.row - 3 >= 0) {
+                let menu = self._menuItems[indexPath.row - 3] //3 is the default number of options that ship with DebugWindow
+                return menu.cellFor(tableView: tableView)
+            } else {
+                NSLog("something funny going on....")
+            }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyIdentifier", for: indexPath)
         return cell
+    }
+    
+    private func registerCellClasses(options: [DWGenericMenu]) {
+        var registeredCells = Set<String>()
+        
+        // Register for each reuse Identifer for once
+        options.forEach { option in
+
+            let reuseIdentifier = option.reuseIdentifier
+            if let registeredNib = option.nib {
+                registeredCells.insert(reuseIdentifier)
+                tableView.register(registeredNib, forCellReuseIdentifier: reuseIdentifier)
+            } else {
+                NSLog("check your implementation of the protocol DWGenericMenu, the nib didn't load")
+            }
+        }
+    }
+    
+    //MARK: UITableView Delegate methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if (indexPath.row >= 3) {
+            //custom menu
+            let menu = self._menuItems[indexPath.row - 3] //3 is the default number of options that ship with DebugWindow
+            guard let navController = self.navigationController else {
+                NSLog("no navigation controller???")
+                return
+            }
+            menu.didSelectRowAt(navigationController: navController)
+        }
     }
 
     /*

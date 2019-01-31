@@ -35,6 +35,7 @@ Use 3 finger swipe gesture  (swipe from left to right) to reveal debug window</s
                                 <state key="normal" title="Reveal Menu"/>
                                 <connections>
                                     <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ks-cr-mHX"/>
+                                    <action selector="testAction:" destination="Ihg-qB-kjw" eventType="touchUpInside" id="3Bg-68-rSl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,6 +54,7 @@ Use 3 finger swipe gesture  (swipe from left to right) to reveal debug window</s
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Ihg-qB-kjw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>

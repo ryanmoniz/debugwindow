@@ -16,7 +16,10 @@ class TestViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func testAction(_ sender: Any) {
+        NSLog("a button was clicked!!!")
+    }
+    
     /*
     // MARK: - Navigation
 

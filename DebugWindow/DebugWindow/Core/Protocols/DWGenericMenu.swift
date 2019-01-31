@@ -11,10 +11,10 @@ import UIKit
 public protocol DWGenericMenu {
     
     /// Reuse identifier for the cell.
-    static var reuseIdentifier: String { get }
+    var reuseIdentifier: String { get }
     
     /// Nib file for the uitableviewcell, nullable
-    static var nib: UINib? { get }
+    var nib: UINib? { get }
     
     /// Function to dequeue the cell for the given table view
     /// - Note: Cell class is registrated automatically when tableview initialized
@@ -27,7 +27,7 @@ public protocol DWGenericMenu {
     
     /// function to handle when row is selected
     /// implementation is responsible for providing view controller or action
-    func didSelectRowAt()
+    func didSelectRowAt(navigationController:UINavigationController)
 }
 
 public extension DWGenericMenu {

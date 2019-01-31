@@ -11,11 +11,12 @@ import UIKit
 public class DebugWindow {
     public static let sharedInstance = DebugWindow()
     
+    private var menuItems = [DWGenericMenu]()
     private lazy var slideInTransitioningDelegate = SlideInPresentationManager()
     private var debugVC: DebugTableViewController!
     
     //MARK: - Methods
-    public func setup() {
+    public func setup(menuItems:[DWGenericMenu]?) {
         NSLog("DebugWindow init")
         
         //configure swipe action

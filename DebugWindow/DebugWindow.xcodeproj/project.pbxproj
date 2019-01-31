@@ -11,6 +11,11 @@
 		326625F921EE6840004E49B0 /* DWCoreDataSpy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625F821EE6840004E49B0 /* DWCoreDataSpy.storyboard */; };
 		326625FB21EE68A2004E49B0 /* DWLiveLogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625FA21EE68A2004E49B0 /* DWLiveLogs.storyboard */; };
 		3266260221EE699B004E49B0 /* DWLocalizationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3266260121EE699B004E49B0 /* DWLocalizationTableViewController.swift */; };
+		327CE8152202C09A00900812 /* DWGenericMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CE8142202C09A00900812 /* DWGenericMenu.swift */; };
+		327CE8182202C68300900812 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CE8162202C68300900812 /* TestViewController.swift */; };
+		327CE8192202C68300900812 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327CE8172202C68300900812 /* TestViewController.xib */; };
+		327CE81C2202C94500900812 /* TestMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CE81B2202C94500900812 /* TestMenu.swift */; };
+		327CE81E2202C98700900812 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327CE81D2202C98700900812 /* TestCell.xib */; };
 		526B9A0921DD7B7900A8E11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A0821DD7B7900A8E11E /* AppDelegate.swift */; };
 		526B9A0B21DD7B7900A8E11E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A0A21DD7B7900A8E11E /* ViewController.swift */; };
 		526B9A0E21DD7B7900A8E11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526B9A0C21DD7B7900A8E11E /* Main.storyboard */; };
@@ -49,6 +54,11 @@
 		326625FA21EE68A2004E49B0 /* DWLiveLogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DWLiveLogs.storyboard; sourceTree = "<group>"; };
 		326625FD21EE697E004E49B0 /* DebugWindow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DebugWindow-Bridging-Header.h"; sourceTree = "<group>"; };
 		3266260121EE699B004E49B0 /* DWLocalizationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DWLocalizationTableViewController.swift; sourceTree = "<group>"; };
+		327CE8142202C09A00900812 /* DWGenericMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DWGenericMenu.swift; path = DebugWindow/Core/Protocols/DWGenericMenu.swift; sourceTree = SOURCE_ROOT; };
+		327CE8162202C68300900812 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		327CE8172202C68300900812 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		327CE81B2202C94500900812 /* TestMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMenu.swift; sourceTree = "<group>"; };
+		327CE81D2202C98700900812 /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 		526B9A0521DD7B7900A8E11E /* DebugWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526B9A0821DD7B7900A8E11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526B9A0A21DD7B7900A8E11E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +124,24 @@
 			path = LocalizationModule;
 			sourceTree = "<group>";
 		};
+		327CE8132202C08000900812 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				327CE8142202C09A00900812 /* DWGenericMenu.swift */,
+			);
+			name = Protocols;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		327CE81A2202C91C00900812 /* TestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				327CE8162202C68300900812 /* TestViewController.swift */,
+				327CE8172202C68300900812 /* TestViewController.xib */,
+			);
+			path = TestViewController;
+			sourceTree = "<group>";
+		};
 		526B99FC21DD7B7900A8E11E = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +168,9 @@
 				526B9A3821DD81B400A8E11E /* Core */,
 				526B9A0821DD7B7900A8E11E /* AppDelegate.swift */,
 				526B9A0A21DD7B7900A8E11E /* ViewController.swift */,
+				327CE81B2202C94500900812 /* TestMenu.swift */,
+				327CE81D2202C98700900812 /* TestCell.xib */,
+				327CE81A2202C91C00900812 /* TestViewController */,
 				526B9A0C21DD7B7900A8E11E /* Main.storyboard */,
 				526B9A0F21DD7B7B00A8E11E /* Assets.xcassets */,
 				526B9A1121DD7B7B00A8E11E /* LaunchScreen.storyboard */,
@@ -177,6 +208,7 @@
 				526B9A3C21DD81D800A8E11E /* SlideInPresentationAnimator.swift */,
 				526B9A3B21DD81D800A8E11E /* SlideInPresentationController.swift */,
 				3266260321EE69A9004E49B0 /* LocalizationModule */,
+				327CE8132202C08000900812 /* Protocols */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -291,7 +323,9 @@
 				526B9A1321DD7B7B00A8E11E /* LaunchScreen.storyboard in Resources */,
 				326625F921EE6840004E49B0 /* DWCoreDataSpy.storyboard in Resources */,
 				526B9A1021DD7B7B00A8E11E /* Assets.xcassets in Resources */,
+				327CE81E2202C98700900812 /* TestCell.xib in Resources */,
 				326625FB21EE68A2004E49B0 /* DWLiveLogs.storyboard in Resources */,
+				327CE8192202C68300900812 /* TestViewController.xib in Resources */,
 				526B9A0E21DD7B7900A8E11E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,13 +351,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327CE8182202C68300900812 /* TestViewController.swift in Sources */,
 				526B9A4021DD827E00A8E11E /* DebugTableViewController.swift in Sources */,
 				526B9A3A21DD81C500A8E11E /* SlideInPresentationManager.swift in Sources */,
 				526B9A3E21DD81D800A8E11E /* SlideInPresentationAnimator.swift in Sources */,
 				526B9A3721DD7EBC00A8E11E /* DebugWIndow.swift in Sources */,
 				526B9A0B21DD7B7900A8E11E /* ViewController.swift in Sources */,
+				327CE81C2202C94500900812 /* TestMenu.swift in Sources */,
 				3266260221EE699B004E49B0 /* DWLocalizationTableViewController.swift in Sources */,
 				526B9A3D21DD81D800A8E11E /* SlideInPresentationController.swift in Sources */,
+				327CE8152202C09A00900812 /* DWGenericMenu.swift in Sources */,
 				526B9A0921DD7B7900A8E11E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,8 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        DebugWindow.sharedInstance.setup()
+        
+        //add a custom menu to display a custom uiviewcontroller
+        var menu = [DWGenericMenu]()
+        
+        menu.append(customTest())
+        
+        //need the #if DEBUG
+        DebugWindow.sharedInstance.setup(menuItems: menu)
+
+        
         return true
+    }
+    
+    private func customTest() -> DWGenericMenu {
+        return TestMenu()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

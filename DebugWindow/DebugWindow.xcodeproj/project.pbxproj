@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3242B602222F55CA00C2E4EC /* DWGenericMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242B601222F55C900C2E4EC /* DWGenericMenu.swift */; };
+		3242B604222F55EF00C2E4EC /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242B603222F55EF00C2E4EC /* LocalizationSystem.swift */; };
 		326625F721EE67A2004E49B0 /* DWLocalizationDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625F621EE67A2004E49B0 /* DWLocalizationDebug.storyboard */; };
 		326625F921EE6840004E49B0 /* DWCoreDataSpy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625F821EE6840004E49B0 /* DWCoreDataSpy.storyboard */; };
 		326625FB21EE68A2004E49B0 /* DWLiveLogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326625FA21EE68A2004E49B0 /* DWLiveLogs.storyboard */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		3242B601222F55C900C2E4EC /* DWGenericMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DWGenericMenu.swift; sourceTree = "<group>"; };
+		3242B603222F55EF00C2E4EC /* LocalizationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationSystem.swift; sourceTree = "<group>"; };
 		326625F621EE67A2004E49B0 /* DWLocalizationDebug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DWLocalizationDebug.storyboard; sourceTree = "<group>"; };
 		326625F821EE6840004E49B0 /* DWCoreDataSpy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DWCoreDataSpy.storyboard; sourceTree = "<group>"; };
 		326625FA21EE68A2004E49B0 /* DWLiveLogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DWLiveLogs.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				326625F621EE67A2004E49B0 /* DWLocalizationDebug.storyboard */,
 				3266260121EE699B004E49B0 /* DWLocalizationTableViewController.swift */,
+				3242B603222F55EF00C2E4EC /* LocalizationSystem.swift */,
 			);
 			path = LocalizationModule;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				327CE81C2202C94500900812 /* TestMenu.swift in Sources */,
 				3266260221EE699B004E49B0 /* DWLocalizationTableViewController.swift in Sources */,
 				3242B602222F55CA00C2E4EC /* DWGenericMenu.swift in Sources */,
+				3242B604222F55EF00C2E4EC /* LocalizationSystem.swift in Sources */,
 				526B9A3D21DD81D800A8E11E /* SlideInPresentationController.swift in Sources */,
 				526B9A0921DD7B7900A8E11E /* AppDelegate.swift in Sources */,
 			);

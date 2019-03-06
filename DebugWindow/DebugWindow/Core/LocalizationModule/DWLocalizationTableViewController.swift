@@ -8,87 +8,166 @@
 
 import UIKit
 
+private enum LocalizationSectionType {
+    case DebugLanguages
+    case HumanLanguages
+}
+
+private struct LocalizationSection {
+    var type: LocalizationSectionType
+    var items: [String]
+}
+
+fileprivate let DebugLangugagesTitle = "Debug Languages"
+fileprivate let HumanLanguagesTitle = "Human Languages"
+
+fileprivate let PseudolocalizedIdentifier: String = "PseudolocalizedIdentifier"
+fileprivate let PseudolocalizedRTLIdentifier: String = "PseudolocalizedRTLIdentifier"
+fileprivate let DWHumanLanguageIdentifier: String = "DWHumanLanguageIdentifier"
+
+fileprivate let PseudolocalizedIdentifierState = "PseudolocalizedIdentifierState"
+fileprivate let PseudolocalizedRTLIdentifierState = "PseudolocalizedRTLIdentifierState"
+
+fileprivate let CurrentHumanLangageState = "CurrentHumanLangageState"
+
 class DWLocalizationTableViewController: UITableViewController {
+    private var sections = [LocalizationSection(type: LocalizationSectionType.DebugLanguages, items: [PseudolocalizedIdentifier, PseudolocalizedRTLIdentifier]), LocalizationSection(type: LocalizationSectionType.HumanLanguages, items: NSLocale.isoLanguageCodes)]
+    
+    // init an english NSLocale to get the english name of all NSLocale-Objects
+    private let englishLocale : NSLocale = NSLocale.init(localeIdentifier :  "en_US")
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let sectionItems = sections[section].items
+        return sectionItems.count
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = sections[section]
+        
+        if section.type == LocalizationSectionType.DebugLanguages {
+            return DebugLangugagesTitle
+        } else if section.type == LocalizationSectionType.HumanLanguages {
+            return HumanLanguagesTitle
+        }
+        
+        return ""
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PseudolocalizedIdentifier", for: indexPath)
+        let section = sections[indexPath.section]
+        let sectionItems = section.items
+        
+        if section.type == LocalizationSectionType.DebugLanguages {
+            if sectionItems[indexPath.row] == PseudolocalizedIdentifier {
+                let cell = tableView.dequeueReusableCell(withIdentifier: PseudolocalizedIdentifier, for: indexPath)
+                //check user defaults to see what was saved
+                if let value = UserDefaults.standard.value(forKey: PseudolocalizedIdentifierState) as? Bool {
+                    if value {
+                        cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                    } else {
+                        cell.accessoryType = UITableViewCell.AccessoryType.none
+                    }
+                } else {
+                    cell.accessoryType = UITableViewCell.AccessoryType.none
+                }
+                return cell
+            } else if sectionItems[indexPath.row] == PseudolocalizedRTLIdentifier {
+                let cell = tableView.dequeueReusableCell(withIdentifier: PseudolocalizedRTLIdentifier, for: indexPath)
+                
+                if let value = UserDefaults.standard.value(forKey: PseudolocalizedRTLIdentifierState) as? Bool {
+                    if value {
+                        cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                    } else {
+                        cell.accessoryType = UITableViewCell.AccessoryType.none
+                    }
+                } else {
+                    cell.accessoryType = UITableViewCell.AccessoryType.none
+                }
+                return cell
+            }
+        } else if section.type == LocalizationSectionType.HumanLanguages {
+            let item = sectionItems[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: DWHumanLanguageIdentifier, for: indexPath)
+            cell.textLabel?.text = item
 
-        // Configure the cell...
-
+            if let value = UserDefaults.standard.value(forKey: CurrentHumanLangageState) as? String {
+                if value == item {
+                    cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                } else {
+                    cell.accessoryType = UITableViewCell.AccessoryType.none
+                }
+            } else {
+                cell.accessoryType = UITableViewCell.AccessoryType.none
+            }
+            
+            if let langInEnglish = englishLocale.displayName(forKey: NSLocale.Key.identifier, value: item) {
+                cell.detailTextLabel?.text = langInEnglish
+            } else {
+                cell.detailTextLabel?.text = ""
+            }
+            cell.selectionStyle = .default
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: PseudolocalizedIdentifier, for: indexPath)
         return cell
     }
-
     
-    //override system font with custom font
-    //https://stackoverflow.com/questions/8707082/set-a-default-font-for-whole-ios-app
-    
-    //setup app with fonts
-    //https://codewithchris.com/common-mistakes-with-adding-custom-fonts-to-your-ios-app/
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = sections[indexPath.section]
+        let sectionItems = section.items
+        
+        if section.type == LocalizationSectionType.DebugLanguages {
+            if sectionItems[indexPath.row] == PseudolocalizedIdentifier {
+                
+                if let value = UserDefaults.standard.value(forKey: PseudolocalizedIdentifierState) as? Bool {
+                    if value {
+                        //toggle off
+                        UserDefaults.standard.setValue(false, forKey: PseudolocalizedIdentifierState)
+                        UserDefaults.standard.setValue(false, forKey: PseudolocalizedRTLIdentifierState)
+                        UserDefaults.standard.synchronize()
+                    } else {
+                        //toggle on
+                        UserDefaults.standard.setValue(true, forKey: PseudolocalizedIdentifierState)
+                        UserDefaults.standard.setValue(false, forKey: PseudolocalizedRTLIdentifierState)
+                        UserDefaults.standard.synchronize()
+                    }
+                } else {
+                    UserDefaults.standard.setValue(true, forKey: PseudolocalizedIdentifierState)
+                    UserDefaults.standard.setValue(false, forKey: PseudolocalizedRTLIdentifierState)
+                    UserDefaults.standard.synchronize()
+                }
+            } else if sectionItems[indexPath.row] == PseudolocalizedRTLIdentifier {
+                if let value = UserDefaults.standard.value(forKey: PseudolocalizedRTLIdentifierState) as? Bool {
+                    if value {
+                        //toggle off
+                        UserDefaults.standard.setValue(false, forKey: PseudolocalizedIdentifierState)
+                        UserDefaults.standard.setValue(false, forKey: PseudolocalizedRTLIdentifierState)
+                        UserDefaults.standard.synchronize()
+                    } else {
+                        //toggle on
+                        UserDefaults.standard.setValue(false, forKey: PseudolocalizedIdentifierState)
+                        UserDefaults.standard.setValue(true, forKey: PseudolocalizedRTLIdentifierState)
+                        UserDefaults.standard.synchronize()
+                    }
+                } else {
+                    UserDefaults.standard.setValue(false, forKey: PseudolocalizedIdentifierState)
+                    UserDefaults.standard.setValue(true, forKey: PseudolocalizedRTLIdentifierState)
+                    UserDefaults.standard.synchronize()
+                }                
+            }
+            self.tableView.reloadData()
+        } else if section.type == LocalizationSectionType.HumanLanguages {
+            UserDefaults.standard.setValue(sectionItems[indexPath.row], forKey: CurrentHumanLangageState)
+            UserDefaults.standard.synchronize()
+            self.tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

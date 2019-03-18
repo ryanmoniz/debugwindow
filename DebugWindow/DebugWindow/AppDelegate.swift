@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DebugWindowKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

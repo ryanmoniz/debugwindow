@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DebugWindowKit
 
 /// A menu with custom UI.
 internal struct TestMenu: DWGenericMenu {

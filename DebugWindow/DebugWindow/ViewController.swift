@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DebugWindowKit
 
 class ViewController: UIViewController {
 

@@ -17,6 +17,9 @@
 		327CE8192202C68300900812 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327CE8172202C68300900812 /* TestViewController.xib */; };
 		327CE81C2202C94500900812 /* TestMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CE81B2202C94500900812 /* TestMenu.swift */; };
 		327CE81E2202C98700900812 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327CE81D2202C98700900812 /* TestCell.xib */; };
+		523FFC3F223C210400832F4D /* CDSpyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523FFC3E223C210400832F4D /* CDSpyTableViewController.swift */; };
+		523FFC41223C237500832F4D /* CDSpyEntityDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523FFC40223C237500832F4D /* CDSpyEntityDetailsTableViewController.swift */; };
+		523FFC43223C254900832F4D /* CDSpyEntityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523FFC42223C254900832F4D /* CDSpyEntityListTableViewController.swift */; };
 		526B9A0921DD7B7900A8E11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A0821DD7B7900A8E11E /* AppDelegate.swift */; };
 		526B9A0B21DD7B7900A8E11E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A0A21DD7B7900A8E11E /* ViewController.swift */; };
 		526B9A0E21DD7B7900A8E11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526B9A0C21DD7B7900A8E11E /* Main.storyboard */; };
@@ -61,6 +64,9 @@
 		327CE8172202C68300900812 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		327CE81B2202C94500900812 /* TestMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMenu.swift; sourceTree = "<group>"; };
 		327CE81D2202C98700900812 /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
+		523FFC3E223C210400832F4D /* CDSpyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSpyTableViewController.swift; sourceTree = "<group>"; };
+		523FFC40223C237500832F4D /* CDSpyEntityDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSpyEntityDetailsTableViewController.swift; sourceTree = "<group>"; };
+		523FFC42223C254900832F4D /* CDSpyEntityListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSpyEntityListTableViewController.swift; sourceTree = "<group>"; };
 		526B9A0521DD7B7900A8E11E /* DebugWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526B9A0821DD7B7900A8E11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526B9A0A21DD7B7900A8E11E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,16 @@
 			path = TestViewController;
 			sourceTree = "<group>";
 		};
+		523FFC3D223C20E300832F4D /* CoreDataSpy */ = {
+			isa = PBXGroup;
+			children = (
+				523FFC3E223C210400832F4D /* CDSpyTableViewController.swift */,
+				523FFC40223C237500832F4D /* CDSpyEntityDetailsTableViewController.swift */,
+				523FFC42223C254900832F4D /* CDSpyEntityListTableViewController.swift */,
+			);
+			path = CoreDataSpy;
+			sourceTree = "<group>";
+		};
 		526B99FC21DD7B7900A8E11E = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +221,7 @@
 		526B9A3821DD81B400A8E11E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				523FFC3D223C20E300832F4D /* CoreDataSpy */,
 				526B9A3621DD7EBC00A8E11E /* DebugWIndow.swift */,
 				526B9A3F21DD827E00A8E11E /* DebugTableViewController.swift */,
 				326625FC21EE691E004E49B0 /* UI */,
@@ -358,10 +375,13 @@
 				526B9A4021DD827E00A8E11E /* DebugTableViewController.swift in Sources */,
 				526B9A3A21DD81C500A8E11E /* SlideInPresentationManager.swift in Sources */,
 				526B9A3E21DD81D800A8E11E /* SlideInPresentationAnimator.swift in Sources */,
+				523FFC43223C254900832F4D /* CDSpyEntityListTableViewController.swift in Sources */,
 				526B9A3721DD7EBC00A8E11E /* DebugWIndow.swift in Sources */,
 				526B9A0B21DD7B7900A8E11E /* ViewController.swift in Sources */,
 				327CE81C2202C94500900812 /* TestMenu.swift in Sources */,
 				3266260221EE699B004E49B0 /* DWLocalizationTableViewController.swift in Sources */,
+				523FFC3F223C210400832F4D /* CDSpyTableViewController.swift in Sources */,
+				523FFC41223C237500832F4D /* CDSpyEntityDetailsTableViewController.swift in Sources */,
 				3242B602222F55CA00C2E4EC /* DWGenericMenu.swift in Sources */,
 				3242B604222F55EF00C2E4EC /* LocalizationSystem.swift in Sources */,
 				526B9A3D21DD81D800A8E11E /* SlideInPresentationController.swift in Sources */,

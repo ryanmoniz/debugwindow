@@ -1,10 +1,13 @@
 //
-//  DebugWIndow.swift
+//  DebugWindow.swift
 //  DebugWindow
 //
 //  Created by Ryan Moniz on 1/2/19.
 //  Copyright © 2019 Ryan Moniz. All rights reserved.
 //
+
+//Since DebugWindow is primarily a debugging library and should never be included in production, the steps below will outline how to install DebugWindow in a way that keeps it out of production builds. There is also a guide below explaining how to verify which builds have DebugWindow and which ones do not. 
+
 
 import UIKit
 

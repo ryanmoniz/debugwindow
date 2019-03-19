@@ -18,6 +18,7 @@
 		526B9A1321DD7B7B00A8E11E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526B9A1121DD7B7B00A8E11E /* LaunchScreen.storyboard */; };
 		526B9A1E21DD7B7B00A8E11E /* DebugWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A1D21DD7B7B00A8E11E /* DebugWindowTests.swift */; };
 		526B9A2921DD7B7B00A8E11E /* DebugWindowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A2821DD7B7B00A8E11E /* DebugWindowUITests.swift */; };
+		52CA84712240970900630C73 /* DebugWindowKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CA84702240970900630C73 /* DebugWindowKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		526B9A2421DD7B7B00A8E11E /* DebugWindowExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebugWindowExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		526B9A2821DD7B7B00A8E11E /* DebugWindowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugWindowUITests.swift; sourceTree = "<group>"; };
 		526B9A2A21DD7B7B00A8E11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52CA84702240970900630C73 /* DebugWindowKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DebugWindowKit.framework; path = ../../debugwindowkit/Carthage/Build/iOS/DebugWindowKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CA84712240970900630C73 /* DebugWindowKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +98,7 @@
 		523FFC8F22403F2100832F4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52CA84702240970900630C73 /* DebugWindowKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +169,7 @@
 				526B9A0121DD7B7900A8E11E /* Sources */,
 				526B9A0221DD7B7900A8E11E /* Frameworks */,
 				526B9A0321DD7B7900A8E11E /* Resources */,
+				52CA84722240974C00630C73 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -283,6 +288,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52CA84722240974C00630C73 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DebugWindowKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILD_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DebugWindowKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ]; then \n    /usr/local/bin/carthage copy-frameworks\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		526B9A0121DD7B7900A8E11E /* Sources */ = {
@@ -470,7 +497,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6PGBN67R2T;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/DebugWindow-elctuodffgeskbgyxvdirlbzvibr/Build/Products/Debug-iphonesimulator/DebugWindowKit.framework\"";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = DebugWindow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -492,7 +519,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6PGBN67R2T;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/DebugWindow-elctuodffgeskbgyxvdirlbzvibr/Build/Products/Debug-iphonesimulator/DebugWindowKit.framework\"";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = DebugWindow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

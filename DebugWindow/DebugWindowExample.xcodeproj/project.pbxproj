@@ -18,7 +18,6 @@
 		526B9A1321DD7B7B00A8E11E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526B9A1121DD7B7B00A8E11E /* LaunchScreen.storyboard */; };
 		526B9A1E21DD7B7B00A8E11E /* DebugWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A1D21DD7B7B00A8E11E /* DebugWindowTests.swift */; };
 		526B9A2921DD7B7B00A8E11E /* DebugWindowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B9A2821DD7B7B00A8E11E /* DebugWindowUITests.swift */; };
-		52CA846D2240551D00630C73 /* DebugWindowKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CA846A2240551600630C73 /* DebugWindowKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,27 +34,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 526B9A0421DD7B7900A8E11E;
 			remoteInfo = DebugWindow;
-		};
-		52CA84692240551600630C73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52CA84642240551500630C73 /* DebugWindowKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 523FFC4E224031C600832F4D;
-			remoteInfo = DebugWindowKit;
-		};
-		52CA846B2240551600630C73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52CA84642240551500630C73 /* DebugWindowKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 523FFC57224031C600832F4D;
-			remoteInfo = DebugWindowKitTests;
-		};
-		52CA846E2240552300630C73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52CA84642240551500630C73 /* DebugWindowKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 523FFC4D224031C600832F4D;
-			remoteInfo = DebugWindowKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,7 +56,6 @@
 		526B9A2421DD7B7B00A8E11E /* DebugWindowExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebugWindowExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		526B9A2821DD7B7B00A8E11E /* DebugWindowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugWindowUITests.swift; sourceTree = "<group>"; };
 		526B9A2A21DD7B7B00A8E11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52CA84642240551500630C73 /* DebugWindowKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DebugWindowKit.xcodeproj; path = DebugWindowFramework/DebugWindow/DebugWindowKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CA846D2240551D00630C73 /* DebugWindowKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +102,6 @@
 		526B99FC21DD7B7900A8E11E = {
 			isa = PBXGroup;
 			children = (
-				52CA84642240551500630C73 /* DebugWindowKit.xcodeproj */,
 				526B9A0721DD7B7900A8E11E /* DebugWindow */,
 				526B9A1C21DD7B7B00A8E11E /* DebugWindowTests */,
 				526B9A2721DD7B7B00A8E11E /* DebugWindowUITests */,
@@ -180,15 +155,6 @@
 			path = DebugWindowUITests;
 			sourceTree = "<group>";
 		};
-		52CA84652240551500630C73 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52CA846A2240551600630C73 /* DebugWindowKit.framework */,
-				52CA846C2240551600630C73 /* DebugWindowKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,7 +169,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				52CA846F2240552300630C73 /* PBXTargetDependency */,
 			);
 			name = DebugWindowExample;
 			productName = DebugWindow;
@@ -281,12 +246,6 @@
 			mainGroup = 526B99FC21DD7B7900A8E11E;
 			productRefGroup = 526B9A0621DD7B7900A8E11E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 52CA84652240551500630C73 /* Products */;
-					ProjectRef = 52CA84642240551500630C73 /* DebugWindowKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				526B9A0421DD7B7900A8E11E /* DebugWindowExample */,
@@ -295,23 +254,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		52CA846A2240551600630C73 /* DebugWindowKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DebugWindowKit.framework;
-			remoteRef = 52CA84692240551600630C73 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		52CA846C2240551600630C73 /* DebugWindowKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = DebugWindowKitTests.xctest;
-			remoteRef = 52CA846B2240551600630C73 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		526B9A0321DD7B7900A8E11E /* Resources */ = {
@@ -382,11 +324,6 @@
 			isa = PBXTargetDependency;
 			target = 526B9A0421DD7B7900A8E11E /* DebugWindowExample */;
 			targetProxy = 526B9A2521DD7B7B00A8E11E /* PBXContainerItemProxy */;
-		};
-		52CA846F2240552300630C73 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DebugWindowKit;
-			targetProxy = 52CA846E2240552300630C73 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

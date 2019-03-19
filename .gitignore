@@ -1,1 +1,3 @@
 DebugWindowFramework/DebugWindow/DebugWindow.xcodeproj
+DebugWindow/Carthage
+Cartfile.resolved
